@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="560" viewBox="0 0 1600 560" font-family="Arial, Helvetica, sans-serif">
+  <rect width="1600" height="560" fill="#ffffff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <g font-size="19" fill="#1d2433">
+    <rect x="20" y="170" width="220" height="150" rx="10" fill="#eef3fb" stroke="#4C72B0" stroke-width="2"/>
+    <text x="130" y="210" text-anchor="middle" font-weight="bold">Two-channel field</text>
+    <text x="130" y="242" text-anchor="middle">reporter (GFP / FITC)</text>
+    <text x="130" y="268" text-anchor="middle">+ nuclear stain</text>
+    <text x="130" y="296" text-anchor="middle" font-size="16" fill="#555">(chip or well image)</text>
+
+    <rect x="290" y="170" width="240" height="150" rx="10" fill="#eef3fb" stroke="#4C72B0" stroke-width="2"/>
+    <text x="410" y="210" text-anchor="middle" font-weight="bold">Nucleus segmentation</text>
+    <text x="410" y="242" text-anchor="middle">3-class U-Net</text>
+    <text x="410" y="268" text-anchor="middle">trained on BBBC039 (CC0)</text>
+    <text x="410" y="296" text-anchor="middle" font-size="16" fill="#555">test F1@0.5 = 0.948</text>
+
+    <rect x="580" y="170" width="240" height="150" rx="10" fill="#eef3fb" stroke="#4C72B0" stroke-width="2"/>
+    <text x="700" y="210" text-anchor="middle" font-weight="bold">Single cells</text>
+    <text x="700" y="242" text-anchor="middle">N/C intensity ratio</text>
+    <text x="700" y="268" text-anchor="middle">+ centred crops</text>
+    <text x="700" y="296" text-anchor="middle" font-size="16" fill="#555">93,551 cells, 192 fields</text>
+
+    <rect x="870" y="170" width="240" height="150" rx="10" fill="#eef3fb" stroke="#4C72B0" stroke-width="2"/>
+    <text x="990" y="210" text-anchor="middle" font-weight="bold">Frozen DINOv2</text>
+    <text x="990" y="242" text-anchor="middle">ViT-S/14, no fine-tuning</text>
+    <text x="990" y="268" text-anchor="middle">768-d per cell</text>
+    <text x="990" y="296" text-anchor="middle" font-size="16" fill="#555">CLS + mean patch</text>
+
+    <rect x="1160" y="40" width="410" height="120" rx="10" fill="#fdf1e8" stroke="#DD8452" stroke-width="2"/>
+    <text x="1365" y="78" text-anchor="middle" font-weight="bold">0 · CAES (label-free)</text>
+    <text x="1365" y="108" text-anchor="middle">distance from untreated-control cells</text>
+    <text x="1365" y="136" text-anchor="middle" font-size="16" fill="#555">needs: which chips are untreated</text>
+
+    <rect x="1160" y="185" width="410" height="120" rx="10" fill="#eef3fb" stroke="#4C72B0" stroke-width="2"/>
+    <text x="1365" y="223" text-anchor="middle" font-weight="bold">1 · Classical N/C ratio</text>
+    <text x="1365" y="253" text-anchor="middle">hand-engineered, assay-specific</text>
+    <text x="1365" y="281" text-anchor="middle" font-size="16" fill="#555">needs: knowing what to measure</text>
+
+    <rect x="1160" y="330" width="410" height="120" rx="10" fill="#edf7ef" stroke="#55A868" stroke-width="2"/>
+    <text x="1365" y="368" text-anchor="middle" font-weight="bold">2 · Few-shot probe</text>
+    <text x="1365" y="398" text-anchor="middle">logistic regression, neg vs pos controls</text>
+    <text x="1365" y="426" text-anchor="middle" font-size="16" fill="#555">needs: a positive control</text>
+
+    <rect x="290" y="400" width="820" height="120" rx="10" fill="#f6f6f6" stroke="#777" stroke-width="2"/>
+    <text x="700" y="440" text-anchor="middle" font-weight="bold">Per-chip score → dose-response statistics</text>
+    <text x="700" y="472" text-anchor="middle">4PL Hill fit · EC50 + bootstrap 95% CI · Z′ · V-factor · Spearman ρ</text>
+    <text x="700" y="500" text-anchor="middle" font-size="16" fill="#555">+ organ-on-chip regime: refit on 2–4 chips × 5–all cells, evaluate on different chips</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#a)">
+    <path d="M240,245 L286,245"/><path d="M530,245 L576,245"/><path d="M820,245 L866,245"/>
+    <path d="M1110,230 L1156,110"/><path d="M1110,245 L1156,245"/><path d="M1110,260 L1156,385"/>
+    <path d="M1160,470 L1114,470"/>
+  </g>
+</svg>

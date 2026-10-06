@@ -1,0 +1,13 @@
+data/
+results_dbg/
+demo_out/*
+!demo_out/BBBC013_A08_overlay.png
+!demo_out/BBBC013_A08.json
+logs/
+__pycache__/
+*.pyc
+results/*/embeddings.npy
+results/*/cells.parquet
+results/*/sample_efficiency_raw.csv
+models/_dbg.pt
+docs/_report_inlined.md

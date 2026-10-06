@@ -1,0 +1,10 @@
+{
+ "input": "BBBC013_A08",
+ "n_cells": 300,
+ "classic_log_nc_mean": 1.4235574637873327,
+ "classic_pct_of_positive_control": 86.60195015578732,
+ "caes_mean_log_mahalanobis": 3.7920094574464165,
+ "caes_responder_fraction": 0.38333332538604736,
+ "probe_mean_probability_responding": 0.9742072820663452,
+ "seconds": 1.8484141826629639
+}
